@@ -30,3 +30,21 @@ class BioAgent:
         motifs = ['RR', 'KK', 'WW', 'FF', 'LL', 'CC']
         features.extend([1 if motif in peptide else 0 for motif in motifs])
         return np.array(features).reshape(1, -1)
+
+
+    #   Chargement des modèles pré-entraînés
+
+    def load_models(self, activity_path: str, toxicity_path: str, scaler_path: str = None):
+        try:
+            self.activity_model = joblib.load(activity_path)
+            self.toxicity_model = joblib.load(toxicity_path)
+            if scaler_path:
+                self.scaler = joblib.load(scaler_path)
+            else:
+                    self.scaler = None
+            self.use_heuristic = False
+            print("Modèles bio chargés avec succès.")
+        except Exception as e:
+            print(f" Échec du chargement des modèles : {e}")
+            print(" Utilisation des règles heuristiques par défaut.")
+            self.use_heuristic = True
