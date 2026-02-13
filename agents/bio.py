@@ -65,3 +65,17 @@ class BioAgent:
             base_score = max(0, min(1, (charge + 3) / 6))
             penalty = abs(gravy) / 2
             return max(0, base_score - 0.3 * penalty)
+    
+    #  Prédiction de toxicité 
+
+    def predict_toxicity(self, peptide: str) -> float:
+        if not self.use_heuristic and self.toxicity_model is not None: 
+            features = self.extract_features(peptide)
+            if self.scaler:
+                features = self.scaler.transform(features)
+            proba = self.toxicity_model.predict_proba(features)[0, 1]
+            return float(proba)
+        else:
+            #Régle heuristqiue : forte hydrophobicité - toxicité
+            gravy = calculate_gravy(peptide)
+            return min(1, max(0, (gravy + 2) / 4))
