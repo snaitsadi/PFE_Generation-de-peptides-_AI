@@ -48,3 +48,20 @@ class BioAgent:
             print(f" Échec du chargement des modèles : {e}")
             print(" Utilisation des règles heuristiques par défaut.")
             self.use_heuristic = True
+
+     #   Prédiction d'activité
+
+    def predict_activity(self, peptide: str) -> float:
+        if not self.use_heuristic and self.activity_model is not None:
+            features = self.extract_features(peptide)
+            if self.scaler:
+                features = self.scaler.transform(features)
+            proba = self.activity_model.predict_proba(features)[0, 1]
+            return float(proba)
+        else:
+            # Règle heuristique simple (charge positive, hydrophobicité modérée)
+            charge = calculate_charge(peptide)
+            gravy = calculate_gravy(peptide)
+            base_score = max(0, min(1, (charge + 3) / 6))
+            penalty = abs(gravy) / 2
+            return max(0, base_score - 0.3 * penalty)
