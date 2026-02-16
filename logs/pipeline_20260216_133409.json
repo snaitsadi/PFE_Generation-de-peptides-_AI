@@ -1,0 +1,1328 @@
+{
+  "config": {
+    "pipeline": {
+      "population_size": 100,
+      "num_iterations": 10,
+      "top_k": 10,
+      "mutation_rate": 0.1,
+      "crossover_rate": 0.3,
+      "elite_size": 5,
+      "min_length": 5,
+      "max_length": 50
+    },
+    "designer": {
+      "use_llm": false
+    },
+    "chemistry": {
+      "charge_range": [
+        -3,
+        3
+      ],
+      "gravy_range": [
+        -2,
+        2
+      ],
+      "forbidden_patterns": [
+        "CCC",
+        "PPP",
+        "KKKK"
+      ]
+    },
+    "bio": {
+      "activity_model_path": "data/models/activity_rf.pkl",
+      "toxicity_model_path": "data/models/toxicity_rf.pkl",
+      "scaler_path": "data/models/scaler.pkl"
+    },
+    "evaluation": {
+      "metrics": [
+        "validity",
+        "activity_score",
+        "diversity",
+        "constraint_pass_rate"
+      ],
+      "baseline_comparison": true
+    }
+  },
+  "iterations": [
+    {
+      "iteration": 0,
+      "population_size": 100,
+      "valid_count": 66,
+      "chem_validation": [
+        {
+          "peptide": "CHWSRVKLHSR",
+          "length": true,
+          "charge": false,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": false
+        },
+        {
+          "peptide": "RNIGDGRMRTQTEFNHDVQTYCGFWDNARYVVIRQILHSS",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "WTCGPVQWEAWNYIAQPPKTVRYINLLQPNGWFNAAFCFDTDLNMWCP",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "CFYHINHPLLLRCNPVQINKPQNCICDRPIQQAAMLLIQMSMG",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "QDMETHVHPWVEFKIGH",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "activity": 0.8903880221235236,
+          "toxicity": 0.5512919238447155,
+          "composite": 0.614742060201166
+        },
+        {
+          "peptide": "AKKENVCYAVEFVKNPDCWK",
+          "activity": 0.8816251981616439,
+          "toxicity": 0.5710151025191782,
+          "composite": 0.5961176469020548
+        },
+        {
+          "peptide": "NMITEFLAFFTKRP",
+          "activity": 0.8556630510529507,
+          "toxicity": 0.5377879253594462,
+          "composite": 0.5867690883732276
+        },
+        {
+          "peptide": "KMTEKNPHDYCYLAHIMTACTPRRAWLGT",
+          "activity": 0.8608749585226362,
+          "toxicity": 0.5552980827170093,
+          "composite": 0.5832259171641315
+        },
+        {
+          "peptide": "IVYFDTMFSSRLMPHMKNNI",
+          "activity": 0.853050874758322,
+          "toxicity": 0.5478640135965641,
+          "composite": 0.5791188679600399
+        },
+        {
+          "peptide": "NKPRFCCTLAAREHNY",
+          "activity": 0.8105646018441504,
+          "toxicity": 0.48321470237172093,
+          "composite": 0.5689572506582898
+        },
+        {
+          "peptide": "PTLRWQ",
+          "activity": 0.8286675708228667,
+          "toxicity": 0.531296141498622,
+          "composite": 0.5630195000735556
+        },
+        {
+          "peptide": "STWPKTQIRT",
+          "activity": 0.8082071598042537,
+          "toxicity": 0.49504420976281793,
+          "composite": 0.5606850549228448
+        },
+        {
+          "peptide": "PEVISFISAYGAYDCVGLFRKREQYPAYHVKPMC",
+          "activity": 0.8079236962183767,
+          "toxicity": 0.5092264914384653,
+          "composite": 0.553310450499144
+        }
+      ],
+      "avg_activity": 0.67530033919353,
+      "avg_toxicity": 0.5390198276515972,
+      "avg_composite": 0.4057904253677314,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 1,
+      "population_size": 100,
+      "valid_count": 71,
+      "chem_validation": [
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "AKKENVCYAVEFVKNPDCWK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "NMITEFLAFFTKRP",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "KMTEKNPHDYCYLAHIMTACTPRRAWLGT",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "activity": 0.8903880221235236,
+          "toxicity": 0.5512919238447155,
+          "composite": 0.614742060201166
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "activity": 0.8903880221235236,
+          "toxicity": 0.5512919238447155,
+          "composite": 0.614742060201166
+        },
+        {
+          "peptide": "AKKENVCYAVEFVKNPDCWK",
+          "activity": 0.8816251981616439,
+          "toxicity": 0.5710151025191782,
+          "composite": 0.5961176469020548
+        },
+        {
+          "peptide": "KLNDSYTPEKRTISQKFFW",
+          "activity": 0.8600248853706671,
+          "toxicity": 0.5324140385819911,
+          "composite": 0.5938178660796716
+        },
+        {
+          "peptide": "RFQSPGV",
+          "activity": 0.8688238733343777,
+          "toxicity": 0.5545416024712148,
+          "composite": 0.5915530720987703
+        },
+        {
+          "peptide": "TKPRFCCTLAAREHNY",
+          "activity": 0.8265714393631427,
+          "toxicity": 0.4711329347385443,
+          "composite": 0.5910049719938706
+        },
+        {
+          "peptide": "NMITEFLAFFTKRP",
+          "activity": 0.8556630510529507,
+          "toxicity": 0.5377879253594462,
+          "composite": 0.5867690883732276
+        },
+        {
+          "peptide": "KMTEKNPHDYCYLAHIMTACTPRRAWLGT",
+          "activity": 0.8608749585226362,
+          "toxicity": 0.5552980827170093,
+          "composite": 0.5832259171641315
+        }
+      ],
+      "avg_activity": 0.6540909085528226,
+      "avg_toxicity": 0.5435540278445516,
+      "avg_composite": 0.3823138946305469,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 2,
+      "population_size": 100,
+      "valid_count": 78,
+      "chem_validation": [
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "AKKENVCYAVEFVKNPDCWK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.8971389077529524,
+          "toxicity": 0.4969238400901174,
+          "composite": 0.6486769877078936
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "FAEYVTGLFYEHCARKNRTAK",
+          "activity": 0.8735223206687377,
+          "toxicity": 0.4851591393353079,
+          "composite": 0.6309427510010838
+        },
+        {
+          "peptide": "VMFRACPHDQEKMIALDFRNIIPGYYGTCRTKVVGNYAQDYCMR",
+          "activity": 0.8771310939997727,
+          "toxicity": 0.5072178038782007,
+          "composite": 0.6235221920606724
+        },
+        {
+          "peptide": "DNRCWVCLRGMIPIKNSTRDD",
+          "activity": 0.8771797839035917,
+          "toxicity": 0.5240376373132722,
+          "composite": 0.6151609652469556
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "activity": 0.8903880221235236,
+          "toxicity": 0.5512919238447155,
+          "composite": 0.614742060201166
+        },
+        {
+          "peptide": "KWNGSYSPEKRTISQKFFC",
+          "activity": 0.8903880221235236,
+          "toxicity": 0.5512919238447155,
+          "composite": 0.614742060201166
+        },
+        {
+          "peptide": "ASETLLKCCASSFCSNEGQKDLFSWSTDKIHKLSNRN",
+          "activity": 0.850283302937905,
+          "toxicity": 0.5067299348994028,
+          "composite": 0.5969183354882036
+        },
+        {
+          "peptide": "AKKENVCYAVEFVKNPDCWK",
+          "activity": 0.8816251981616439,
+          "toxicity": 0.5710151025191782,
+          "composite": 0.5961176469020548
+        }
+      ],
+      "avg_activity": 0.6896900022213318,
+      "avg_toxicity": 0.5378082876269654,
+      "avg_composite": 0.4207858584078491,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 3,
+      "population_size": 100,
+      "valid_count": 76,
+      "chem_validation": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "FAEYVTGLFYEHCARKNRTAK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "VMFRACPHDQEKMIALDFRNIIPGYYGTCRTKVVGNYAQDYCMR",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.8971389077529524,
+          "toxicity": 0.4969238400901174,
+          "composite": 0.6486769877078936
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFFC",
+          "activity": 0.9153209862306838,
+          "toxicity": 0.5438633910063114,
+          "composite": 0.643389290727528
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "ANFAAMLVGHRRYG",
+          "activity": 0.9231732690845785,
+          "toxicity": 0.5828102867204975,
+          "composite": 0.6317681257243297
+        },
+        {
+          "peptide": "FAEYVTGLFYEHCARKNRTAK",
+          "activity": 0.8735223206687377,
+          "toxicity": 0.4851591393353079,
+          "composite": 0.6309427510010838
+        },
+        {
+          "peptide": "LPKVWIAS",
+          "activity": 0.9141306295222792,
+          "toxicity": 0.5666885824271969,
+          "composite": 0.6307863383086807
+        },
+        {
+          "peptide": "LPLVAIYCYLINTMLGVPMKEMREKAK",
+          "activity": 0.8939775247121012,
+          "toxicity": 0.5391718878174292,
+          "composite": 0.6243915808033866
+        },
+        {
+          "peptide": "VMFRACPHDQEKMIALDFRNIIPGYYGTCRTKVVGNYAQDYCMR",
+          "activity": 0.8771310939997727,
+          "toxicity": 0.5072178038782007,
+          "composite": 0.6235221920606724
+        },
+        {
+          "peptide": "VWFRNHIL",
+          "activity": 0.8830931161379227,
+          "toxicity": 0.5299476375730291,
+          "composite": 0.6181192973514082
+        }
+      ],
+      "avg_activity": 0.6741793958319452,
+      "avg_toxicity": 0.5399335480674139,
+      "avg_composite": 0.40421262179823814,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 4,
+      "population_size": 100,
+      "valid_count": 72,
+      "chem_validation": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFFC",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "ANFAAMLVGHRRYG",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.8971389077529524,
+          "toxicity": 0.4969238400901174,
+          "composite": 0.6486769877078936
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFTLAHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.891586833166698,
+          "toxicity": 0.49125019130237196,
+          "composite": 0.645961737515512
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFFC",
+          "activity": 0.9153209862306838,
+          "toxicity": 0.5438633910063114,
+          "composite": 0.643389290727528
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RFKARWC",
+          "activity": 0.9244127601995696,
+          "toxicity": 0.585011512986356,
+          "composite": 0.6319070037063916
+        },
+        {
+          "peptide": "ANFAAMLVGHRRYG",
+          "activity": 0.9231732690845785,
+          "toxicity": 0.5828102867204975,
+          "composite": 0.6317681257243297
+        },
+        {
+          "peptide": "FAEYVTGLFYEHCARKNRTAK",
+          "activity": 0.8735223206687377,
+          "toxicity": 0.4851591393353079,
+          "composite": 0.6309427510010838
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFTC",
+          "activity": 0.9000741693848973,
+          "toxicity": 0.5562012029791034,
+          "composite": 0.6219735678953455
+        },
+        {
+          "peptide": "PLVYIILNWICSKANPNHQR",
+          "activity": 0.8589825736829608,
+          "toxicity": 0.4743350492496052,
+          "composite": 0.6218150490581582
+        }
+      ],
+      "avg_activity": 0.7135818993095236,
+      "avg_toxicity": 0.5428351050932027,
+      "avg_composite": 0.44216434676292227,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 5,
+      "population_size": 100,
+      "valid_count": 69,
+      "chem_validation": [
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFTLAHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFFC",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "TLRKVAQ",
+          "activity": 0.929446425620538,
+          "toxicity": 0.513425464881459,
+          "composite": 0.6727336931798085
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "activity": 0.9064401645556426,
+          "toxicity": 0.5065303494268464,
+          "composite": 0.6531749898422194
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.8971389077529524,
+          "toxicity": 0.4969238400901174,
+          "composite": 0.6486769877078936
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFTLAHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.891586833166698,
+          "toxicity": 0.49125019130237196,
+          "composite": 0.645961737515512
+        },
+        {
+          "peptide": "RLVGRDTKFHLGGIEFCSRQGD",
+          "activity": 0.8820128260886005,
+          "toxicity": 0.4769277774588083,
+          "composite": 0.6435489373591964
+        },
+        {
+          "peptide": "PFATAFCMSSPYLTPKRTISQKFFC",
+          "activity": 0.9153209862306838,
+          "toxicity": 0.5438633910063114,
+          "composite": 0.643389290727528
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "RSRSSVPDWNKHL",
+          "activity": 0.9126166665631256,
+          "toxicity": 0.5385908893516322,
+          "composite": 0.6433212218873094
+        },
+        {
+          "peptide": "GWRWFKRDQF",
+          "activity": 0.9265766201482201,
+          "toxicity": 0.5668604808994824,
+          "composite": 0.6431463796984789
+        },
+        {
+          "peptide": "AIKRWYAKI",
+          "activity": 0.9022128507834818,
+          "toxicity": 0.5410493849072116,
+          "composite": 0.631688158329876
+        }
+      ],
+      "avg_activity": 0.7067319809112852,
+      "avg_toxicity": 0.5356770383077196,
+      "avg_composite": 0.4388934617574253,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 6,
+      "population_size": 100,
+      "valid_count": 67,
+      "chem_validation": [
+        {
+          "peptide": "TLRKVAQ",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFTLAHDVRQFSTDCHLIIIRALTSK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RLVGRDTKFHLGGIEFCSRQGD",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "TLRKVAQ",
+          "activity": 0.929446425620538,
+          "toxicity": 0.513425464881459,
+          "composite": 0.6727336931798085
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "activity": 0.9106527433940189,
+          "toxicity": 0.48930543479665806,
+          "composite": 0.6660000259956899
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "activity": 0.9338115025465332,
+          "toxicity": 0.5444366661359659,
+          "composite": 0.6615931694785503
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "activity": 0.9064401645556426,
+          "toxicity": 0.5065303494268464,
+          "composite": 0.6531749898422194
+        },
+        {
+          "peptide": "DLIIQMKCMAAKSPSLR",
+          "activity": 0.9356672460091784,
+          "toxicity": 0.5702040095163629,
+          "composite": 0.650565241250997
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFSLRHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.8971389077529524,
+          "toxicity": 0.4969238400901174,
+          "composite": 0.6486769877078936
+        },
+        {
+          "peptide": "SEIIEFGRMMMMAPDFTHRSKFTLAHDVRQFSTDCHLIIIRALTSK",
+          "activity": 0.891586833166698,
+          "toxicity": 0.49125019130237196,
+          "composite": 0.645961737515512
+        },
+        {
+          "peptide": "RLVGRDTKFHLGGIEFCSRQGD",
+          "activity": 0.8820128260886005,
+          "toxicity": 0.4769277774588083,
+          "composite": 0.6435489373591964
+        },
+        {
+          "peptide": "QYYQHMKFCHCHNNGEKKGSIVTNLWRVDTPYSPGFMICNAFMIY",
+          "activity": 0.882766070617821,
+          "toxicity": 0.5262906677766588,
+          "composite": 0.6196207367294916
+        },
+        {
+          "peptide": "MKKLGHS",
+          "activity": 0.9003348035099485,
+          "toxicity": 0.5833961878737206,
+          "composite": 0.6086367095730882
+        }
+      ],
+      "avg_activity": 0.7097395113076252,
+      "avg_toxicity": 0.5347787028121824,
+      "avg_composite": 0.4423501599015338,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 7,
+      "population_size": 100,
+      "valid_count": 73,
+      "chem_validation": [
+        {
+          "peptide": "TLRKVAQ",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "DLIIQMKCMAAKSPSLR",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "TLRKVAQ",
+          "activity": 0.929446425620538,
+          "toxicity": 0.513425464881459,
+          "composite": 0.6727336931798085
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "activity": 0.9106527433940189,
+          "toxicity": 0.48930543479665806,
+          "composite": 0.6660000259956899
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "activity": 0.9338115025465332,
+          "toxicity": 0.5444366661359659,
+          "composite": 0.6615931694785503
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "activity": 0.9458624728457052,
+          "toxicity": 0.5849645233231434,
+          "composite": 0.6533802111841336
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "activity": 0.9064401645556426,
+          "toxicity": 0.5065303494268464,
+          "composite": 0.6531749898422194
+        },
+        {
+          "peptide": "EGKMTGCAKETKAKGVVEK",
+          "activity": 0.9061171692120237,
+          "toxicity": 0.510407176235787,
+          "composite": 0.6509135810941302
+        },
+        {
+          "peptide": "DLIIQMKCMAAKSPSLR",
+          "activity": 0.9356672460091784,
+          "toxicity": 0.5702040095163629,
+          "composite": 0.650565241250997
+        },
+        {
+          "peptide": "CQIWVRFPDMRPKV",
+          "activity": 0.9321502396832867,
+          "toxicity": 0.5790268443642348,
+          "composite": 0.6426368175011693
+        },
+        {
+          "peptide": "RVRSSVNDWAKHA",
+          "activity": 0.9076533910469979,
+          "toxicity": 0.5348976520004239,
+          "composite": 0.640204565046786
+        },
+        {
+          "peptide": "MKKLGHS",
+          "activity": 0.9003348035099485,
+          "toxicity": 0.5833961878737206,
+          "composite": 0.6086367095730882
+        }
+      ],
+      "avg_activity": 0.685885300491975,
+      "avg_toxicity": 0.5416672708170829,
+      "avg_composite": 0.41505166508343366,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 8,
+      "population_size": 100,
+      "valid_count": 76,
+      "chem_validation": [
+        {
+          "peptide": "TLRKVAQ",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "KIPETKAKRVVEK",
+          "activity": 0.9468583683458885,
+          "toxicity": 0.45894877138552653,
+          "composite": 0.7173839826531253
+        },
+        {
+          "peptide": "TLRKVAQ",
+          "activity": 0.929446425620538,
+          "toxicity": 0.513425464881459,
+          "composite": 0.6727336931798085
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "activity": 0.9106527433940189,
+          "toxicity": 0.48930543479665806,
+          "composite": 0.6660000259956899
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "activity": 0.9338115025465332,
+          "toxicity": 0.5444366661359659,
+          "composite": 0.6615931694785503
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "activity": 0.9458624728457052,
+          "toxicity": 0.5849645233231434,
+          "composite": 0.6533802111841336
+        },
+        {
+          "peptide": "RSRSSVNDWAKHA",
+          "activity": 0.9064401645556426,
+          "toxicity": 0.5065303494268464,
+          "composite": 0.6531749898422194
+        },
+        {
+          "peptide": "CLFPKPESSIELGEKRNCAEPCNDFNQKRPYWNPGLTKHIR",
+          "activity": 0.9028642577817787,
+          "toxicity": 0.49960878239503087,
+          "composite": 0.6530598665842633
+        },
+        {
+          "peptide": "CQIWVRFPDTRPKV",
+          "activity": 0.9032076537700524,
+          "toxicity": 0.5156616140526291,
+          "composite": 0.6453768467437379
+        },
+        {
+          "peptide": "EGKMTGCAKREWSNGIIPR",
+          "activity": 0.9065226453829384,
+          "toxicity": 0.5252064713172656,
+          "composite": 0.6439194097243055
+        },
+        {
+          "peptide": "PRANVRPPR",
+          "activity": 0.948500531457483,
+          "toxicity": 0.6130907192556235,
+          "composite": 0.6419551718296712
+        }
+      ],
+      "avg_activity": 0.6933103725214371,
+      "avg_toxicity": 0.5376330004411433,
+      "avg_composite": 0.4244938723008654,
+      "next_population_size": 100
+    },
+    {
+      "iteration": 9,
+      "population_size": 100,
+      "valid_count": 73,
+      "chem_validation": [
+        {
+          "peptide": "KIPETKAKRVVEK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "TLRKVAQ",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "length": true,
+          "charge": true,
+          "gravy": true,
+          "forbidden_patterns": true,
+          "solubility": true,
+          "all_passed": true
+        }
+      ],
+      "top_scores": [
+        {
+          "peptide": "KIPETKAKRVVEK",
+          "activity": 0.9468583683458885,
+          "toxicity": 0.45894877138552653,
+          "composite": 0.7173839826531253
+        },
+        {
+          "peptide": "TLRKVAQ",
+          "activity": 0.929446425620538,
+          "toxicity": 0.513425464881459,
+          "composite": 0.6727336931798085
+        },
+        {
+          "peptide": "SFVPLWDLKFKILRCNTNNT",
+          "activity": 0.9106527433940189,
+          "toxicity": 0.48930543479665806,
+          "composite": 0.6660000259956899
+        },
+        {
+          "peptide": "GQIWVRLPDGVPKK",
+          "activity": 0.9338115025465332,
+          "toxicity": 0.5444366661359659,
+          "composite": 0.6615931694785503
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "activity": 0.9458624728457052,
+          "toxicity": 0.5849645233231434,
+          "composite": 0.6533802111841336
+        },
+        {
+          "peptide": "GRKPFLSAA",
+          "activity": 0.9458624728457052,
+          "toxicity": 0.5849645233231434,
+          "composite": 0.6533802111841336
+        },
+        {
+          "peptide": "FMFRMCLEDPGHGKTIIRIRKSLDMIVKTDYY",
+          "activity": 0.8947978191902882,
+          "toxicity": 0.5186626165987581,
+          "composite": 0.6354665108909092
+        },
+        {
+          "peptide": "MPNAKFHFLWADFLSKYNFGFMGKI",
+          "activity": 0.9038046300222856,
+          "toxicity": 0.550265623572978,
+          "composite": 0.6286718182357967
+        },
+        {
+          "peptide": "KIPETKAKRVEEK",
+          "activity": 0.8648844672192516,
+          "toxicity": 0.4776926488055404,
+          "composite": 0.6260381428164814
+        },
+        {
+          "peptide": "SVMLVAKDLMVDKKAF",
+          "activity": 0.9224553260477762,
+          "toxicity": 0.5980138033207707,
+          "composite": 0.6234484243873909
+        }
+      ],
+      "avg_activity": 0.7065277228012249,
+      "avg_toxicity": 0.5381717370417786,
+      "avg_composite": 0.43744185428033544,
+      "next_population_size": 20
+    }
+  ],
+  "final_results": {
+    "top_peptides": [
+      {
+        "peptide": "RSRSSVPDWNKHL",
+        "activity_score": 0.9126166665631256,
+        "toxicity_score": 0.5385908893516322,
+        "composite_score": 0.6433212218873094,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "KWNGSYSPEKRTISQKFFC",
+        "activity_score": 0.8903880221235236,
+        "toxicity_score": 0.5512919238447155,
+        "composite_score": 0.614742060201166,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "AKKENVCYAVEFVKNPDCWK",
+        "activity_score": 0.8816251981616439,
+        "toxicity_score": 0.5710151025191782,
+        "composite_score": 0.5961176469020548,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "NMITEFLAFFTKRP",
+        "activity_score": 0.8556630510529507,
+        "toxicity_score": 0.5377879253594462,
+        "composite_score": 0.5867690883732276,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "KMTEKNPHDYCYLAHIMTACTPRRAWLGT",
+        "activity_score": 0.8608749585226362,
+        "toxicity_score": 0.5552980827170093,
+        "composite_score": 0.5832259171641315,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "IVYFDTMFSSRLMPHMKNNI",
+        "activity_score": 0.853050874758322,
+        "toxicity_score": 0.5478640135965641,
+        "composite_score": 0.5791188679600399,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "NKPRFCCTLAAREHNY",
+        "activity_score": 0.8105646018441504,
+        "toxicity_score": 0.48321470237172093,
+        "composite_score": 0.5689572506582898,
+        "suggestions": []
+      },
+      {
+        "peptide": "PTLRWQ",
+        "activity_score": 0.8286675708228667,
+        "toxicity_score": 0.531296141498622,
+        "composite_score": 0.5630195000735556,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "STWPKTQIRT",
+        "activity_score": 0.8082071598042537,
+        "toxicity_score": 0.49504420976281793,
+        "composite_score": 0.5606850549228448,
+        "suggestions": []
+      },
+      {
+        "peptide": "PEVISFISAYGAYDCVGLFRKREQYPAYHVKPMC",
+        "activity_score": 0.8079236962183767,
+        "toxicity_score": 0.5092264914384653,
+        "composite_score": 0.553310450499144,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      }
+    ],
+    "best_peptide": {
+      "peptide": "RSRSSVPDWNKHL",
+      "activity_score": 0.9126166665631256,
+      "toxicity_score": 0.5385908893516322,
+      "composite_score": 0.6433212218873094,
+      "suggestions": [
+        "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+      ]
+    },
+    "total_iterations": 10
+  }
+}
