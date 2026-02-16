@@ -103,3 +103,61 @@ def main():
     pipeline_metrics = evaluator.evaluate_pipeline(
         pipeline_logs, orchestrator.chemistry
     )
+
+
+    # 3. Exécuter la baseline si demandé
+    baseline_metrics = None
+    if args.baseline:
+        print("\n=== Exécution de la baseline ===")
+        baseline_logs = run_baseline(
+            population_size=orchestrator.population_size,
+            num_iterations=orchestrator.num_iterations
+        )
+        baseline_metrics = evaluator.evaluate_pipeline(
+            baseline_logs, orchestrator.chemistry
+        )
+        
+        # Comparaison
+        comparison = evaluator.compare_with_baseline(
+            pipeline_metrics, baseline_metrics
+        )
+        
+        print("\n=== Comparaison avec la baseline ===")
+        for metric, values in comparison.items():
+            print(f"{metric}:")
+            print(f"  Pipeline: {values['pipeline']:.3f}")
+            print(f"  Baseline: {values['baseline']:.3f}")
+            print(f"  Amélioration: {values['improvement_percent']:.1f}%")
+
+    # 4. Afficher les résultats
+    print("\n=== Résultats du pipeline ===")
+    print(f"Validité finale: {pipeline_metrics.get('final_validity', 0):.1%}")
+    print(f"Score composite moyen (Top-K): {pipeline_metrics.get('top_k_composite', 0):.3f}")
+    
+    if 'top_peptides' in pipeline_metrics:
+        print("\nTop 5 peptides:")
+        for i, peptide_data in enumerate(pipeline_metrics['top_peptides'][:5], 1):
+            print(f"{i}. {peptide_data['peptide']} "
+                  f"(activité: {peptide_data['activity_score']:.3f}, "
+                  f"toxicité: {peptide_data['toxicity_score']:.3f}, "
+                  f"composite: {peptide_data['composite_score']:.3f})")
+    
+
+    # 5. Générer les graphiques
+    if args.plot:
+        plot_evolution(pipeline_metrics, save_path='results/evolution.png')
+    
+    # 6. Sauvegarder les résultats
+    results = {
+        'pipeline_metrics': pipeline_metrics,
+        'baseline_metrics': baseline_metrics,
+        'comparison': comparison if args.baseline else None
+    }
+    
+    with open('results/final_results.json', 'w') as f:
+        json.dump(results, f, indent=2)
+    
+    print("\n=== Résultats sauvegardés dans results/final_results.json ===")
+
+if __name__ == '__main__':
+    main()
