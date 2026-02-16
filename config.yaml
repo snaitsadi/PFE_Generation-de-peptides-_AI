@@ -1,0 +1,26 @@
+pipeline:
+  population_size: 100
+  num_iterations: 10
+  top_k: 10
+  mutation_rate: 0.1
+  crossover_rate: 0.3
+  elite_size: 5
+  min_length: 5
+  max_length: 50
+
+designer:
+  use_llm: false
+
+chemistry:
+  charge_range: [-3, 3]
+  gravy_range: [-2, 2]
+  forbidden_patterns: ["CCC", "PPP", "KKKK"]
+
+bio:
+  activity_model_path: "data/models/activity_rf.pkl"
+  toxicity_model_path: "data/models/toxicity_rf.pkl"
+  scaler_path: "data/models/scaler.pkl"   # optionnel mais recommandé
+
+evaluation:
+  metrics: ["validity", "activity_score", "diversity", "constraint_pass_rate"]
+  baseline_comparison: true
