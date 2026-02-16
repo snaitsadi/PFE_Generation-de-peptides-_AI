@@ -51,3 +51,29 @@ def run_baseline(population_size: int = 100,
         
         # Trier par score
         scores.sort(key=lambda x: x['composite_score'], reverse=True)
+
+        # Log de l'itération (AVEC les moyennes d'activité et toxicité)
+        iteration_log = {
+            'iteration': iteration,
+            'population_size': len(population),
+            'valid_count': len(valid_peptides),
+            'avg_activity': np.mean([s['activity_score'] for s in scores]) if scores else 0,
+            'avg_toxicity': np.mean([s['toxicity_score'] for s in scores]) if scores else 0,
+            'avg_composite': np.mean([s['composite_score'] for s in scores]) if scores else 0,
+            'top_scores': scores[:top_k]
+        }
+        
+        logs['iterations'].append(iteration_log)
+        
+        # Accumuler les meilleurs
+        all_peptides.extend([s['peptide'] for s in scores[:top_k]])
+        all_scores.extend(scores[:top_k])
+    
+    # Résultats finaux
+    all_scores.sort(key=lambda x: x['composite_score'], reverse=True)
+    logs['final_results'] = {
+        'top_peptides': all_scores[:top_k],
+        'best_peptide': all_scores[0] if all_scores else None
+    }
+    
+    return logs
