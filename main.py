@@ -35,4 +35,4 @@ class Orchestrator:
             scaler_path = self.config['bio'].get('scaler_path', None)
             self.bio.load_models(act_path, tox_path, scaler_path)
         except KeyError:
-            print("ℹ Aucun chemin de modèle spécifié, utilisation des heuristiques.")
+            print("ℹ  Aucun chemin de modèle spécifié, utilisation des heuristiques.")
