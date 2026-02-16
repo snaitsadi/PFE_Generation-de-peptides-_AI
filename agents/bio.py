@@ -79,3 +79,29 @@ class BioAgent:
             #Régle heuristqiue : forte hydrophobicité - toxicité
             gravy = calculate_gravy(peptide)
             return min(1, max(0, (gravy + 2) / 4))
+        
+    #   Évaluation complète d'un peptide
+
+    def evaluate(self, peptide: str) -> Dict:
+        """Évalue un peptide individuel"""
+        activity_score = self.predict_activity(peptide)
+        toxicity_score = self.predict_toxicity(peptide)
+        composite_score = activity_score - 0.5 * toxicity_score  # ajustable
+
+        suggestions = []
+        if activity_score < 0.5:
+            suggestions.append("Augmenter la charge positive pour améliorer l'activité.")
+        if toxicity_score > 0.5:
+            suggestions.append("Réduire l'hydrophobicité pour diminuer la toxicité.")
+
+        return {
+            'peptide': peptide,
+            'activity_score': activity_score,
+            'toxicity_score': toxicity_score,
+            'composite_score': composite_score,
+            'suggestions': suggestions
+        }
+
+    def evaluate_population(self, peptides: List[str]) -> List[Dict]:
+        """Évalue une liste de peptides"""
+        return [self.evaluate(pep) for pep in peptides]

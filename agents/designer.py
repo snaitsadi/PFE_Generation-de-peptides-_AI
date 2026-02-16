@@ -1,10 +1,10 @@
 import numpy as np
-import typing import List, Tuple 
+from typing import List, Tuple 
 import random 
-from utils import AMINO8ACIDS, generate_random_peptide 
+from utils import AMINO_ACIDS, generate_random_peptide 
 
 
-class designerAgent:
+class DesignerAgent:
     def __init__(self, min_length: int = 5, max_length: int = 50):
         self.min_length = min_length
         self.max_length = max_length

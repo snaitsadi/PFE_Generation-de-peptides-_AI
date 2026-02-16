@@ -1,0 +1,317 @@
+{
+  "pipeline_metrics": {
+    "final_validity": 1.0,
+    "final_diversity": {
+      "levenshtein_mean": 19.57777777777778,
+      "levenshtein_std": 6.075410873673534,
+      "unique_count": 10,
+      "unique_ratio": 1.0,
+      "shannon_entropy": 4.230636194979585
+    },
+    "final_constraint_pass_rate": {
+      "length": 1.0,
+      "charge": 1.0,
+      "gravy": 1.0,
+      "forbidden_patterns": 1.0,
+      "solubility": 1.0
+    },
+    "evolution": {
+      "iterations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "valid_counts": [
+        66,
+        71,
+        78,
+        76,
+        72,
+        69,
+        67,
+        73,
+        76,
+        73
+      ],
+      "avg_activity": [
+        0.67530033919353,
+        0.6540909085528226,
+        0.6896900022213318,
+        0.6741793958319452,
+        0.7135818993095236,
+        0.7067319809112852,
+        0.7097395113076252,
+        0.685885300491975,
+        0.6933103725214371,
+        0.7065277228012249
+      ],
+      "avg_toxicity": [
+        0.5390198276515972,
+        0.5435540278445516,
+        0.5378082876269654,
+        0.5399335480674139,
+        0.5428351050932027,
+        0.5356770383077196,
+        0.5347787028121824,
+        0.5416672708170829,
+        0.5376330004411433,
+        0.5381717370417786
+      ],
+      "avg_composite": [
+        0.4057904253677314,
+        0.3823138946305469,
+        0.4207858584078491,
+        0.40421262179823814,
+        0.44216434676292227,
+        0.4388934617574253,
+        0.4423501599015338,
+        0.41505166508343366,
+        0.4244938723008654,
+        0.43744185428033544
+      ]
+    },
+    "top_peptides": [
+      {
+        "peptide": "RSRSSVPDWNKHL",
+        "activity_score": 0.9126166665631256,
+        "toxicity_score": 0.5385908893516322,
+        "composite_score": 0.6433212218873094,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "KWNGSYSPEKRTISQKFFC",
+        "activity_score": 0.8903880221235236,
+        "toxicity_score": 0.5512919238447155,
+        "composite_score": 0.614742060201166,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "AKKENVCYAVEFVKNPDCWK",
+        "activity_score": 0.8816251981616439,
+        "toxicity_score": 0.5710151025191782,
+        "composite_score": 0.5961176469020548,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "NMITEFLAFFTKRP",
+        "activity_score": 0.8556630510529507,
+        "toxicity_score": 0.5377879253594462,
+        "composite_score": 0.5867690883732276,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "KMTEKNPHDYCYLAHIMTACTPRRAWLGT",
+        "activity_score": 0.8608749585226362,
+        "toxicity_score": 0.5552980827170093,
+        "composite_score": 0.5832259171641315,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "IVYFDTMFSSRLMPHMKNNI",
+        "activity_score": 0.853050874758322,
+        "toxicity_score": 0.5478640135965641,
+        "composite_score": 0.5791188679600399,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "NKPRFCCTLAAREHNY",
+        "activity_score": 0.8105646018441504,
+        "toxicity_score": 0.48321470237172093,
+        "composite_score": 0.5689572506582898,
+        "suggestions": []
+      },
+      {
+        "peptide": "PTLRWQ",
+        "activity_score": 0.8286675708228667,
+        "toxicity_score": 0.531296141498622,
+        "composite_score": 0.5630195000735556,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      },
+      {
+        "peptide": "STWPKTQIRT",
+        "activity_score": 0.8082071598042537,
+        "toxicity_score": 0.49504420976281793,
+        "composite_score": 0.5606850549228448,
+        "suggestions": []
+      },
+      {
+        "peptide": "PEVISFISAYGAYDCVGLFRKREQYPAYHVKPMC",
+        "activity_score": 0.8079236962183767,
+        "toxicity_score": 0.5092264914384653,
+        "composite_score": 0.553310450499144,
+        "suggestions": [
+          "R\u00e9duire l'hydrophobicit\u00e9 pour diminuer la toxicit\u00e9."
+        ]
+      }
+    ],
+    "top_k_activity": 0.8509581799871849,
+    "top_k_toxicity": 0.5320629482460171,
+    "top_k_composite": 0.5849267058641763
+  },
+  "baseline_metrics": {
+    "final_validity": 1.0,
+    "final_diversity": {
+      "levenshtein_mean": 28.31111111111111,
+      "levenshtein_std": 9.665108431241437,
+      "unique_count": 10,
+      "unique_ratio": 1.0,
+      "shannon_entropy": 4.170188802432575
+    },
+    "final_constraint_pass_rate": {
+      "length": 1.0,
+      "charge": 1.0,
+      "gravy": 1.0,
+      "forbidden_patterns": 1.0,
+      "solubility": 1.0
+    },
+    "evolution": {
+      "iterations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "valid_counts": [
+        75,
+        64,
+        73,
+        73,
+        70,
+        74,
+        59,
+        74,
+        68,
+        67
+      ],
+      "avg_activity": [
+        0.4451949673741399,
+        0.47868934846434297,
+        0.4294480379327671,
+        0.41864569181525746,
+        0.4533014068934908,
+        0.4653919725267768,
+        0.4591778642365979,
+        0.4836187522361601,
+        0.5072529698709792,
+        0.4557544893677397
+      ],
+      "avg_toxicity": [
+        0.41650754111630917,
+        0.39870699564809675,
+        0.3992711372395998,
+        0.4035085043472042,
+        0.39729954059481687,
+        0.4188895215341691,
+        0.36250097706920537,
+        0.38133547530832884,
+        0.37679210141254493,
+        0.36560784055165063
+      ],
+      "avg_composite": [
+        0.2369411968159854,
+        0.27933585064029465,
+        0.22981246931296712,
+        0.21689143964165533,
+        0.2546516365960824,
+        0.2559472117596924,
+        0.27792737570199516,
+        0.2929510145819956,
+        0.3188569191647068,
+        0.2729505690919144
+      ]
+    },
+    "top_peptides": [
+      {
+        "peptide": "VMCARTSPRLKGITWKTVISND",
+        "activity_score": 0.9795454545454545,
+        "toxicity_score": 0.46590909090909094,
+        "composite_score": 0.7465909090909091
+      },
+      {
+        "peptide": "TCVDIPQQKGKMIYLQWWVRFYGLIWSKQSGM",
+        "activity_score": 0.97421875,
+        "toxicity_score": 0.45703125,
+        "composite_score": 0.745703125
+      },
+      {
+        "peptide": "FVRQKRYNMQVCMV",
+        "activity_score": 0.9678571428571429,
+        "toxicity_score": 0.4464285714285714,
+        "composite_score": 0.7446428571428572
+      },
+      {
+        "peptide": "WPMSSICMFPFMQYRKR",
+        "activity_score": 0.955,
+        "toxicity_score": 0.425,
+        "composite_score": 0.7424999999999999
+      },
+      {
+        "peptide": "DRVKLLCRLNFRYRFQLMGD",
+        "activity_score": 0.9385,
+        "toxicity_score": 0.39749999999999996,
+        "composite_score": 0.73975
+      },
+      {
+        "peptide": "TCPYRARMLFKY",
+        "activity_score": 0.9375,
+        "toxicity_score": 0.3958333333333333,
+        "composite_score": 0.7395833333333334
+      },
+      {
+        "peptide": "YSTAKEKDPTYRYCAAWFPYFTMMRFKFYKTCPPIMWEFCREGP",
+        "activity_score": 0.9103409090909091,
+        "toxicity_score": 0.35056818181818183,
+        "composite_score": 0.7350568181818182
+      },
+      {
+        "peptide": "WDGKDSLWIMSRMCGTYYGLKNVQCWQLNPWMGNGRSRA",
+        "activity_score": 0.8996153846153846,
+        "toxicity_score": 0.3326923076923076,
+        "composite_score": 0.7332692307692308
+      },
+      {
+        "peptide": "VTCVNKMRWIYRGQVF",
+        "activity_score": 0.9896875,
+        "toxicity_score": 0.5171875,
+        "composite_score": 0.7310937500000001
+      },
+      {
+        "peptide": "CQKNFESSFRVIGPDNNANNDPTRKKMMFQCPMSVWRLPPNGNLPI",
+        "activity_score": 0.8835869565217391,
+        "toxicity_score": 0.30597826086956514,
+        "composite_score": 0.7305978260869566
+      }
+    ],
+    "top_k_activity": 0.9435852097630631,
+    "top_k_toxicity": 0.40941284960510504,
+    "top_k_composite": 0.7388787849605106
+  },
+  "comparison": {}
+}
