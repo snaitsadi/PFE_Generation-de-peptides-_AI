@@ -44,3 +44,27 @@ class designerAgent:
                          elite_size: int = 5) -> List[str]:
         """Génère de nouvelles variantes à partir des meilleurs peptides"""
         new_population = []
+
+
+        # Garder les élites
+        elites = peptides[:elite_size]
+        new_population.extend(elites)
+
+
+        # Générer par mutation et croisement
+        while len(new_population) < len(peptides):
+            if random.random() < crossover_rate and len(peptides) >= 2:
+                # Croisement
+                p1, p2 = random.sample(peptides[:20], 2)  # Sélection parmi les meilleurs
+                child1, child2 = self.crossover(p1, p2)
+                child1 = self.mutate(child1, mutation_rate)
+                child2 = self.mutate(child2, mutation_rate)
+                new_population.extend([child1, child2])
+            else:
+                # Mutation seule
+                parent = random.choice(peptides[:20])
+                child = self.mutate(parent, mutation_rate)
+                new_population.append(child)
+
+        return new_population[:len(peptides)]
+
